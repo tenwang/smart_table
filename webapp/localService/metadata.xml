@@ -1,0 +1,172 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices
+        xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+        <Schema
+            xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+            xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="XSProject.Sales_Dashboard_2">
+            <EntityType Name="Bookings_vs_Quota_2Type" sap:semantics="aggregate">
+                <Key>
+                    <PropertyRef Name="GENERATED_ID"/>
+                </Key>
+                <Property Name="GENERATED_ID" Type="Edm.String" Nullable="false" MaxLength="2147483647" sap:filterable="false"/>
+                <Property Name="COMP_CODE" Type="Edm.String" MaxLength="4" sap:label="COMP_CODE" sap:aggregation-role="dimension"/>
+                <Property Name="CALMONTH" Type="Edm.String" MaxLength="6" sap:label="CALMONTH" sap:aggregation-role="dimension"/>
+                <Property Name="CALMONTH2" Type="Edm.String" MaxLength="2" sap:label="CALMONTH2" sap:aggregation-role="dimension"/>
+                <Property Name="CALYEAR" Type="Edm.String" MaxLength="4" sap:label="CALYEAR" sap:aggregation-role="dimension"/>
+                <Property Name="SPECIALTY" Type="Edm.String" MaxLength="3" sap:label="SPECIALTY" sap:aggregation-role="dimension"/>
+                <Property Name="TXTMD" Type="Edm.String" MaxLength="40" sap:label="TXTMD" sap:aggregation-role="dimension"/>
+                <Property Name="PREV_WORKDAY" Type="Edm.DateTime" sap:display-format="Date" sap:label="PREV_WORKDAY" sap:aggregation-role="dimension"/>
+                <Property Name="AREA_NAME_SHORT" Type="Edm.String" MaxLength="4" sap:label="AREA_NAME_SHORT" sap:aggregation-role="dimension"/>
+                <Property Name="SUBSPEC1" Type="Edm.String" MaxLength="3" sap:label="SUBSPEC1" sap:aggregation-role="dimension"/>
+                <Property Name="CUST_CODE" Type="Edm.String" MaxLength="3" sap:label="CUST_CODE" sap:aggregation-role="dimension"/>
+                <Property Name="SHIP_TO" Type="Edm.String" MaxLength="10" sap:label="SHIP_TO" sap:aggregation-role="dimension"/>
+                <Property Name="SLS_OFF_A" Type="Edm.String" MaxLength="4" sap:label="SLS_OFF_A" sap:aggregation-role="dimension"/>
+                <Property Name="SLS_GRP_A" Type="Edm.String" MaxLength="3" sap:label="SLS_GRP_A" sap:aggregation-role="dimension"/>
+                <Property Name="SLS_REP_A" Type="Edm.String" MaxLength="8" sap:label="SLS_REP_A" sap:aggregation-role="dimension"/>
+                <Property Name="SLS_TER_A" Type="Edm.String" MaxLength="10" sap:label="SLS_TER_A" sap:aggregation-role="dimension"/>
+                <Property Name="SHIP_TO_description" Type="Edm.String" MaxLength="40" sap:label="SHIP_TO_description" sap:aggregation-role="dimension"/>
+                <Property Name="SLS_GRP_A_description" Type="Edm.String" MaxLength="20" sap:label="SLS_GRP_A_description" sap:aggregation-role="dimension"/>
+                <Property Name="SLS_OFF_A_description" Type="Edm.String" MaxLength="20" sap:label="SLS_OFF_A_description" sap:aggregation-role="dimension"/>
+                <Property Name="SLS_TER_A_description" Type="Edm.String" MaxLength="20" sap:label="SLS_TER_A_description" sap:aggregation-role="dimension"/>
+                <Property Name="SLS_REP_A_description" Type="Edm.String" MaxLength="80" sap:label="SLS_REP_A_description" sap:aggregation-role="dimension"/>
+                <Property Name="CUR_YR_MO" Type="Edm.String" MaxLength="6" sap:label="CUR_YR_MO" sap:aggregation-role="dimension"/>
+                <Property Name="PREV_YEAR" Type="Edm.String" MaxLength="4" sap:label="PREV_YEAR" sap:aggregation-role="dimension"/>
+                <Property Name="CUR_DATE" Type="Edm.String" MaxLength="8" sap:label="CUR_DATE" sap:aggregation-role="dimension"/>
+                <Property Name="PY_CUR_DATE" Type="Edm.String" MaxLength="8" sap:label="PY_CUR_DATE" sap:aggregation-role="dimension"/>
+                <Property Name="BUS_TYPE" Type="Edm.String" MaxLength="15" sap:label="BUS_TYPE" sap:aggregation-role="dimension"/>
+                <Property Name="DIVISION" Type="Edm.String" MaxLength="10" sap:label="DIVISION" sap:aggregation-role="dimension"/>
+                <Property Name="SALES_TYPE" Type="Edm.String" MaxLength="10" sap:label="SALES_TYPE" sap:aggregation-role="dimension"/>
+                <Property Name="ORT01" Type="Edm.String" MaxLength="35" sap:label="ORT01" sap:aggregation-role="dimension"/>
+                <Property Name="STRAS" Type="Edm.String" MaxLength="35" sap:label="STRAS" sap:aggregation-role="dimension"/>
+                <Property Name="REGIO" Type="Edm.String" MaxLength="3" sap:label="REGIO" sap:aggregation-role="dimension"/>
+                <Property Name="PSTLZ" Type="Edm.String" MaxLength="10" sap:label="PSTLZ" sap:aggregation-role="dimension"/>
+                <Property Name="WORK_DAYS_TODAY" Type="Edm.Int16" sap:label="WORK_DAYS_TODAY" sap:aggregation-role="dimension"/>
+                <Property Name="WORK_DAYS_MONTH" Type="Edm.Int16" sap:label="WORK_DAYS_MONTH" sap:aggregation-role="dimension"/>
+                <Property Name="ROLL_12_MONTH" Type="Edm.String" MaxLength="1" sap:label="Rolling 12 Month Flag" sap:aggregation-role="dimension"/>
+                <Property Name="BKG_DAYS_LEFT" Type="Edm.Int32" sap:label="Booking Days Left" sap:aggregation-role="dimension"/>
+                <Property Name="MTD_BKG" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="MTD_BKG" sap:aggregation-role="measure"/>
+                <Property Name="MTD_QUOTA" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="MTD_QUOTA" sap:aggregation-role="measure"/>
+                <Property Name="MTD_DIFF" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="MTD_DIFF" sap:aggregation-role="measure"/>
+                <Property Name="YTD_BKG" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="YTD_BKG" sap:aggregation-role="measure"/>
+                <Property Name="YTD_QUOTA" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="YTD_QUOTA" sap:aggregation-role="measure"/>
+                <Property Name="YTD_DIFF" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="YTD_DIFF" sap:aggregation-role="measure"/>
+                <Property Name="YEAR_BKG" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="YEAR_BKG" sap:aggregation-role="measure"/>
+                <Property Name="YEAR_QUOTA" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="YEAR_QUOTA" sap:aggregation-role="measure"/>
+                <Property Name="YEAR_DIFF" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="YEAR_DIFF" sap:aggregation-role="measure"/>
+                <Property Name="PYTD_BKG" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="PYTD_BKG" sap:aggregation-role="measure"/>
+                <Property Name="YOY_GROWTH" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="YOY_GROWTH" sap:aggregation-role="measure"/>
+                <Property Name="PREV_DAY_BKG" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="PREV_DAY_BKG" sap:aggregation-role="measure"/>
+                <Property Name="PY_MTD_BKG" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="PY_MTD_BKG" sap:aggregation-role="measure"/>
+                <Property Name="BKG_AMT" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="BKG_AMT" sap:aggregation-role="measure"/>
+                <Property Name="QUOTA_AMT" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="QUOTA_AMT" sap:aggregation-role="measure"/>
+                <Property Name="DATE_UPDATED" Type="Edm.DateTime" sap:filterable="false" sap:label="DATE_UPDATED" sap:aggregation-role="measure"/>
+                <Property Name="YTD_PCT_TO_QUOTA" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="YTD_PCT_TO_QUOTA" sap:aggregation-role="measure"/>
+                <Property Name="MTD_PCT_TO_QUOTA" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="MTD_PCT_TO_QUOTA" sap:aggregation-role="measure"/>
+                <Property Name="YEAR_PCT_TO_QUOTA" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="YEAR_PCT_TO_QUOTA" sap:aggregation-role="measure"/>
+                <Property Name="YOY_PCT_GROWTH" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="YOY_PCT_GROWTH" sap:aggregation-role="measure"/>
+                <Property Name="PYEAR_BKG" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="PYEAR_BKG" sap:aggregation-role="measure"/>
+                <Property Name="MTD_GTWH_VAR" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="MTD_GTWH_VAR" sap:aggregation-role="measure"/>
+                <Property Name="MTD_PCT_GWTH_VAR" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="MTD_PCT_GWTH_VAR" sap:aggregation-role="measure"/>
+                <Property Name="YTD_GTWH_VAR" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="YTD_GTWH_VAR" sap:aggregation-role="measure"/>
+                <Property Name="YTD_PCT_GWTH_VAR" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="YTD_PCT_GWTH_VAR" sap:aggregation-role="measure"/>
+                <Property Name="YEAR_GTWH_VAR" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="YEAR_GTWH_VAR" sap:aggregation-role="measure"/>
+                <Property Name="YEAR_PCT_GWTH_VAR" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="YEAR_PCT_GWTH_VAR" sap:aggregation-role="measure"/>
+                <Property Name="PMTD_BKG" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="PMTD_BKG" sap:aggregation-role="measure"/>
+                <Property Name="NEED_MTD_QUOTA" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Amt Needed to Reach MTD Quota" sap:aggregation-role="measure"/>
+                <Property Name="NEED_YTD_QUOTA" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Amt Needed to Reach YTD Quota" sap:aggregation-role="measure"/>
+                <Property Name="DAY_BKG" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Daily Booking" sap:aggregation-role="measure"/>
+                <Property Name="DAY_QUOTA" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Day Quota" sap:aggregation-role="measure"/>
+                <Property Name="DAY_DIFF" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Day Difference" sap:aggregation-role="measure"/>
+                <Property Name="PDAY_BKG" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Prev Day Bkg (Dummy) " sap:aggregation-role="measure"/>
+                <Property Name="DAY_PCT_TO_QUOTA" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Day % to Quota" sap:aggregation-role="measure"/>
+                <Property Name="DAY_GTWH_VAR" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Day Growth" sap:aggregation-role="measure"/>
+                <Property Name="DAY_PCT_GWTH_VAR" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Day % Growth" sap:aggregation-role="measure"/>
+            </EntityType>
+            <EntityType Name="Sales_vs_Plan_2Type" sap:semantics="aggregate">
+                <Key>
+                    <PropertyRef Name="GENERATED_ID"/>
+                </Key>
+                <Property Name="GENERATED_ID" Type="Edm.String" Nullable="false" MaxLength="2147483647" sap:filterable="false"/>
+                <Property Name="COMP_CODE" Type="Edm.String" MaxLength="4" sap:label="COMP_CODE" sap:aggregation-role="dimension"/>
+                <Property Name="CALMONTH" Type="Edm.String" MaxLength="6" sap:label="CALMONTH" sap:aggregation-role="dimension"/>
+                <Property Name="CALMONTH2" Type="Edm.String" MaxLength="2" sap:label="CALMONTH2" sap:aggregation-role="dimension"/>
+                <Property Name="CALYEAR" Type="Edm.String" MaxLength="4" sap:label="CALYEAR" sap:aggregation-role="dimension"/>
+                <Property Name="SPECIALTY" Type="Edm.String" MaxLength="3" sap:label="SPECIALTY" sap:aggregation-role="dimension"/>
+                <Property Name="TXTMD" Type="Edm.String" MaxLength="40" sap:label="TXTMD" sap:aggregation-role="dimension"/>
+                <Property Name="PREV_WORKDAY" Type="Edm.DateTime" sap:display-format="Date" sap:label="PREV_WORKDAY" sap:aggregation-role="dimension"/>
+                <Property Name="AREA_NAME_SHORT" Type="Edm.String" MaxLength="4" sap:label="AREA_NAME_SHORT" sap:aggregation-role="dimension"/>
+                <Property Name="SUBSPEC1" Type="Edm.String" MaxLength="3" sap:label="SUBSPEC1" sap:aggregation-role="dimension"/>
+                <Property Name="CUST_CODE" Type="Edm.String" MaxLength="3" sap:label="CUST_CODE" sap:aggregation-role="dimension"/>
+                <Property Name="SHIP_TO" Type="Edm.String" MaxLength="10" sap:label="SHIP_TO" sap:aggregation-role="dimension"/>
+                <Property Name="SLS_OFF_A" Type="Edm.String" MaxLength="4" sap:label="SLS_OFF_A" sap:aggregation-role="dimension"/>
+                <Property Name="SLS_GRP_A" Type="Edm.String" MaxLength="3" sap:label="SLS_GRP_A" sap:aggregation-role="dimension"/>
+                <Property Name="SLS_REP_A" Type="Edm.String" MaxLength="8" sap:label="SLS_REP_A" sap:aggregation-role="dimension"/>
+                <Property Name="SLS_TER_A" Type="Edm.String" MaxLength="10" sap:label="SLS_TER_A" sap:aggregation-role="dimension"/>
+                <Property Name="SHIP_TO_description" Type="Edm.String" MaxLength="40" sap:label="SHIP_TO_description" sap:aggregation-role="dimension"/>
+                <Property Name="SLS_GRP_A_description" Type="Edm.String" MaxLength="20" sap:label="SLS_GRP_A_description" sap:aggregation-role="dimension"/>
+                <Property Name="SLS_OFF_A_description" Type="Edm.String" MaxLength="20" sap:label="SLS_OFF_A_description" sap:aggregation-role="dimension"/>
+                <Property Name="SLS_TER_A_description" Type="Edm.String" MaxLength="20" sap:label="SLS_TER_A_description" sap:aggregation-role="dimension"/>
+                <Property Name="SLS_REP_A_description" Type="Edm.String" MaxLength="80" sap:label="SLS_REP_A_description" sap:aggregation-role="dimension"/>
+                <Property Name="CUR_YR_MO" Type="Edm.String" MaxLength="6" sap:label="CUR_YR_MO" sap:aggregation-role="dimension"/>
+                <Property Name="PREV_YEAR" Type="Edm.String" MaxLength="4" sap:label="PREV_YEAR" sap:aggregation-role="dimension"/>
+                <Property Name="CUR_DATE" Type="Edm.String" MaxLength="8" sap:label="CUR_DATE" sap:aggregation-role="dimension"/>
+                <Property Name="PY_CUR_DATE" Type="Edm.String" MaxLength="8" sap:label="PY_CUR_DATE" sap:aggregation-role="dimension"/>
+                <Property Name="BUS_TYPE" Type="Edm.String" MaxLength="15" sap:label="BUS_TYPE" sap:aggregation-role="dimension"/>
+                <Property Name="DIVISION" Type="Edm.String" MaxLength="10" sap:label="DIVISION" sap:aggregation-role="dimension"/>
+                <Property Name="SALES_TYPE" Type="Edm.String" MaxLength="10" sap:label="SALES_TYPE" sap:aggregation-role="dimension"/>
+                <Property Name="ORT01" Type="Edm.String" MaxLength="35" sap:label="ORT01" sap:aggregation-role="dimension"/>
+                <Property Name="STRAS" Type="Edm.String" MaxLength="35" sap:label="STRAS" sap:aggregation-role="dimension"/>
+                <Property Name="REGIO" Type="Edm.String" MaxLength="3" sap:label="REGIO" sap:aggregation-role="dimension"/>
+                <Property Name="PSTLZ" Type="Edm.String" MaxLength="10" sap:label="PSTLZ" sap:aggregation-role="dimension"/>
+                <Property Name="WORK_DAYS_TODAY" Type="Edm.Int16" sap:label="WORK_DAYS_TODAY" sap:aggregation-role="dimension"/>
+                <Property Name="WORK_DAYS_MONTH" Type="Edm.Int16" sap:label="WORK_DAYS_MONTH" sap:aggregation-role="dimension"/>
+                <Property Name="ROLL_12_MONTH" Type="Edm.String" MaxLength="1" sap:label="Rolling 12 Month Flag" sap:aggregation-role="dimension"/>
+                <Property Name="BKG_DAYS_LEFT" Type="Edm.Int32" sap:label="Booking Days Left" sap:aggregation-role="dimension"/>
+                <Property Name="MTD_BKG" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="MTD_BKG" sap:aggregation-role="measure"/>
+                <Property Name="MTD_QUOTA" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="MTD_QUOTA" sap:aggregation-role="measure"/>
+                <Property Name="MTD_DIFF" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="MTD_DIFF" sap:aggregation-role="measure"/>
+                <Property Name="YTD_BKG" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="YTD_BKG" sap:aggregation-role="measure"/>
+                <Property Name="YTD_QUOTA" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="YTD_QUOTA" sap:aggregation-role="measure"/>
+                <Property Name="YTD_DIFF" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="YTD_DIFF" sap:aggregation-role="measure"/>
+                <Property Name="YEAR_BKG" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="YEAR_BKG" sap:aggregation-role="measure"/>
+                <Property Name="YEAR_QUOTA" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="YEAR_QUOTA" sap:aggregation-role="measure"/>
+                <Property Name="YEAR_DIFF" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="YEAR_DIFF" sap:aggregation-role="measure"/>
+                <Property Name="PYTD_BKG" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="PYTD_BKG" sap:aggregation-role="measure"/>
+                <Property Name="YOY_GROWTH" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="YOY_GROWTH" sap:aggregation-role="measure"/>
+                <Property Name="PREV_DAY_BKG" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="PREV_DAY_BKG" sap:aggregation-role="measure"/>
+                <Property Name="PY_MTD_BKG" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="PY_MTD_BKG" sap:aggregation-role="measure"/>
+                <Property Name="BKG_AMT" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="BKG_AMT" sap:aggregation-role="measure"/>
+                <Property Name="QUOTA_AMT" Type="Edm.Decimal" Precision="18" Scale="2" sap:filterable="false" sap:label="QUOTA_AMT" sap:aggregation-role="measure"/>
+                <Property Name="DATE_UPDATED" Type="Edm.DateTime" sap:filterable="false" sap:label="DATE_UPDATED" sap:aggregation-role="measure"/>
+                <Property Name="YTD_PCT_TO_QUOTA" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="YTD_PCT_TO_QUOTA" sap:aggregation-role="measure"/>
+                <Property Name="MTD_PCT_TO_QUOTA" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="MTD_PCT_TO_QUOTA" sap:aggregation-role="measure"/>
+                <Property Name="YEAR_PCT_TO_QUOTA" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="YEAR_PCT_TO_QUOTA" sap:aggregation-role="measure"/>
+                <Property Name="YOY_PCT_GROWTH" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="YOY_PCT_GROWTH" sap:aggregation-role="measure"/>
+                <Property Name="PYEAR_BKG" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="PYEAR_BKG" sap:aggregation-role="measure"/>
+                <Property Name="MTD_GTWH_VAR" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="MTD_GTWH_VAR" sap:aggregation-role="measure"/>
+                <Property Name="MTD_PCT_GWTH_VAR" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="MTD_PCT_GWTH_VAR" sap:aggregation-role="measure"/>
+                <Property Name="YTD_GTWH_VAR" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="YTD_GTWH_VAR" sap:aggregation-role="measure"/>
+                <Property Name="YTD_PCT_GWTH_VAR" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="YTD_PCT_GWTH_VAR" sap:aggregation-role="measure"/>
+                <Property Name="YEAR_GTWH_VAR" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="YEAR_GTWH_VAR" sap:aggregation-role="measure"/>
+                <Property Name="YEAR_PCT_GWTH_VAR" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="YEAR_PCT_GWTH_VAR" sap:aggregation-role="measure"/>
+                <Property Name="PMTD_BKG" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="PMTD_BKG" sap:aggregation-role="measure"/>
+                <Property Name="NEED_MTD_QUOTA" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Amt Needed to Reach MTD Quota" sap:aggregation-role="measure"/>
+                <Property Name="NEED_YTD_QUOTA" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Amt Needed to Reach YTD Quota" sap:aggregation-role="measure"/>
+                <Property Name="DAY_BKG" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Daily Booking" sap:aggregation-role="measure"/>
+                <Property Name="DAY_QUOTA" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Day Quota" sap:aggregation-role="measure"/>
+                <Property Name="DAY_DIFF" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Day Difference" sap:aggregation-role="measure"/>
+                <Property Name="PDAY_BKG" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Prev Day Bkg (Dummy) " sap:aggregation-role="measure"/>
+                <Property Name="DAY_PCT_TO_QUOTA" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Day % to Quota" sap:aggregation-role="measure"/>
+                <Property Name="DAY_GTWH_VAR" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Day Growth" sap:aggregation-role="measure"/>
+                <Property Name="DAY_PCT_GWTH_VAR" Type="Edm.Decimal" Precision="13" Scale="2" sap:filterable="false" sap:label="Day % Growth" sap:aggregation-role="measure"/>
+            </EntityType>
+            <EntityContainer Name="Sales_Dashboard_2" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="Bookings_vs_Quota_2" EntityType="XSProject.Sales_Dashboard_2.Bookings_vs_Quota_2Type"/>
+                <EntitySet Name="Sales_vs_Plan_2" EntityType="XSProject.Sales_Dashboard_2.Sales_vs_Plan_2Type"/>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

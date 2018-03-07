@@ -1,0 +1,41 @@
+<!--<mvc:View controllerName="com.ten.smart.tablezten_smart_Table.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml"-->
+<!--	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">-->
+<!--	<App>-->
+<!--		<pages>-->
+<!--			<Page title="{i18n>title}">-->
+<!--				<content></content>-->
+<!--			</Page>-->
+<!--		</pages>-->
+<!--	</App>-->
+<!--</mvc:View>-->
+
+<mvc:View 
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="com.ten.smart.tablezten_smart_Table.controller.Main"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable">
+	<smartFilterBar:SmartFilterBar 
+		id="smartFilterBar"
+		entitySet="Bookings_vs_Quota_2">
+		<smartFilterBar:controlConfiguration>
+			<smartFilterBar:ControlConfiguration
+				key="AREA_NAME_SHORT" visibleInAdvancedArea="true"
+				preventInitialDataFetchInValueHelpDialog="false">
+			</smartFilterBar:ControlConfiguration>
+		</smartFilterBar:controlConfiguration>
+	</smartFilterBar:SmartFilterBar>
+	<smartTable:SmartTable 
+		id="smartTable_ResponsiveTable"
+		smartFilterId="smartFilterBar" 
+		tableType="ResponsiveTable" 
+		editable="false"
+		entitySet="Bookings_vs_Quota_2" 
+		useVariantManagement="false"
+		useTablePersonalisation="false" 
+		header="Bookings" 
+		showRowCount="true"
+		useExportToExcel="false" 
+		enableAutoBinding="true">
+	</smartTable:SmartTable>
+</mvc:View>

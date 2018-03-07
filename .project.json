@@ -1,0 +1,74 @@
+{
+  "projectType": [
+    "sap.watt.uitools.ide.fiori",
+    "com.watt.common.builder.sapui5clientbuild",
+    "com.sap.webide.hybrid.cordova"
+  ],
+  "generation": [
+    {
+      "templateId": "ui5template.basicSAPUI5ApplicationProjectCommon",
+      "templateVersion": "1.32.0",
+      "dateTimeStamp": "Tue, 06 Mar 2018 19:41:13 GMT"
+    },
+    {
+      "templateId": "ui5template.basicSAPUI5ApplicationProject",
+      "templateVersion": "1.40.12",
+      "dateTimeStamp": "Tue, 06 Mar 2018 19:41:15 GMT"
+    },
+    {
+      "templateId": "servicecatalog.connectivityComponent",
+      "templateVersion": "0.0.0",
+      "dateTimeStamp": "Tue, 06 Mar 2018 19:45:35 GMT"
+    }
+  ],
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "en,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
+  },
+  "basevalidator": {
+    "services": {
+      "xml": "fioriXmlAnalysis",
+      "js": "fioriJsValidator"
+    }
+  },
+  "codeCheckingTriggers": {
+    "notifyBeforePush": true,
+    "notifyBeforePushLevel": "Error",
+    "blockPush": false,
+    "blockPushLevel": "Error"
+  },
+  "build": {
+    "buildRequired": true,
+    "sourceFolder": "webapp",
+    "targetFolder": "dist",
+    "excludedFolders": [],
+    "excludedFiles": []
+  },
+  "hybrid": {
+    "hatVersion": "1.28.8",
+    "appNamespace": "com.ten.smart.tablezten_smart_Table",
+    "backendDestination": "HND",
+    "oDataConfigs": [
+      {
+        "hybridOdata": {
+          "name": "Sales_Dashboard_2.xsodata",
+          "serviceUrl": ""
+        },
+        "originOdata": {
+          "name": "Sales_Dashboard_2.xsodata",
+          "serviceUrl": "/HND/XSProject/Sales_Dashboard_2.xsodata/"
+        }
+      }
+    ]
+  },
+  "mockpreview": {
+    "mockUri": "/HND/XSProject/Sales_Dashboard_2.xsodata/",
+    "metadataFilePath": "localService/metadata.xml",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  }
+}
